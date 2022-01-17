@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <nav>
+            <a href="/login">Register</a>
+            <a href="/logout">Logout</a>        
+        </nav>
+    </head>
+    <body>
+        {%if username %}
+            <h1> Welcome {{username}}</h1>
+            <h1> Books Available</h1>
+            <ul>
+                <li><a href="/books">List Books</a></li>
+                <li><a href= "{{url_for('static', filename='addBook.html')}}">Add Books</a></li>
+            </ul>
+        {%endif%}
+        <div id="content">
+        {% block content %}
+        {% endblock %}
+        </div>
+    </body>
+</html>
